@@ -1,0 +1,158 @@
+{
+    "user": {
+        "name": {
+            "type": "String"
+        },
+       
+        "emp_code": {
+            "type": "Number",
+            "unique": true
+        },
+        "password": {
+            "type": "String"
+        },
+        "email":{
+            "type":"String"
+        },
+        "mobile":{
+            "type":"String"
+        },
+        "org":{
+            "type":"String"
+        }
+    },
+    "jwt": {
+        "token": {
+            "type": "String"
+        },
+        "name": {
+            "type": "String"
+        },
+        "Built_Time": {
+            "type": "Date"
+        },
+        "logout": {
+            "type": "Boolean"
+        }
+    },
+    "item": {
+        "category": {
+            "type": "String"
+        },
+        "sub_category": {
+            "type": "String"
+        },
+        "item_code": {
+            "type": "String"
+        },
+        "model_no": {
+            "type": "String"
+        },
+        "serial_no": {
+            "type": "Number"
+        },
+        "brand": {
+            "type": "String"
+        },
+        
+        "sale_rate": {
+            "type": "Number"
+        },
+        
+        "buy_rate": {
+            "type": "Number"    
+        },
+           
+        "supplier": {
+            "type": "String"    
+        },  
+        
+        "bill_date": {
+            "type": "String"    
+        },  
+        "issued_by":{
+            "type":"String"
+        },
+        
+        "issued_date": {
+            "type": "String"
+        },
+        
+        "status": {
+            "type": "Boolean"
+        },
+        "size":{
+            "type":"String"
+        },
+      
+        "deleted":{
+            "type":"Boolean",
+            "default":false
+        } 
+       
+       },
+     "bill": {
+        "bill_no": {
+            "type": "String"
+        },
+        "bill_date": {
+            "type": "Date"
+        },
+        "name": {
+            "type": "String"
+        },
+        "address": {
+            "type": "String"
+        },
+        "email": {
+            "type": "Number"
+        },
+        "mobile": {
+            "type": "String"
+        },
+        "items": {
+            "type": "String"
+        },
+        "amount": {
+            "type": "Number"    
+        },
+               
+        "issued_by":{
+            "type":"String"
+        },
+        
+        "issued_date": {
+            "type": "Date"
+        },
+        "status": {
+            "type": "Boolean"
+        }  
+       },
+       "stock": {
+        "item_code": {
+            "type": "String"
+        },
+        "category": {
+            "type": "String"
+        },
+        "sub_category": {
+            "type": "String"
+        },
+        "purchase": {
+            "type": "Number"
+        },
+        "sale": {
+            "type": "Number"
+        },
+        "stock": {
+            "type": "Number"
+        },"issued_by":{
+            "type":"String"
+        },
+        
+        "issued_date": {
+            "type": "String"
+        }
+        
+    }
+}
