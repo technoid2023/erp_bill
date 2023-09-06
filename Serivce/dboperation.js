@@ -437,7 +437,7 @@ operation.allstock = async (page, limit) => {
         let coll = conn.useDb('RSEN');
         let itemModel = coll.model("stocks", sch.stockSchema());
         console.log(itemModel);
-        let itemData = await itemModel.find({ deleted: false }, { deleted: 0, __v: 0 }, { skip: skipElements, limit: limitTo });
+        let itemData = await itemModel.find({}, { deleted: 0, __v: 0 }, { skip: skipElements, limit: limitTo });
         // console.log(itemData);
         conn.close();
         if (itemData.length != 0) {
