@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const mongoose = require('mongoose')
 const sch = require('../Table/schema');
 function connect() {
-    const url = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.0";
+    const url = "mongodb+srv://technoidkolkata:technoid123@cluster0.iivynkd.mongodb.net/";
     const connection = mongoose.createConnection(url,
         { useNewUrlParser: true, useUnifiedTopology: true })
     return connection;

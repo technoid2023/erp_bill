@@ -5,7 +5,7 @@ const axios = require('axios');
 const { log } = require("console");
 const spawn = require('child_process').spawn;
 function connect() {
-    const url = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.0";
+    const url = "mongodb+srv://technoidkolkata:technoid123@cluster0.iivynkd.mongodb.net/";
     const connection = mongoose.createConnection(url,
         { useNewUrlParser: true, useUnifiedTopology: true })
     return connection;
@@ -21,7 +21,7 @@ operation.ulogIn = async (data) => {
         let coll = conn.useDb('RSEN');
         let userModel = coll.model("users", sch.userSchema());
         const user = await userModel.find({ emp_code: data.code, password: data.password }, { _id: 0, password: 0 });
-        console.log(user);
+        // console.log(user);
         if (user.length != 0) {
             let coll1 = conn.useDb('RSEN');
             let jwtModel = coll1.model("jwts", sch.jwtSchema());
@@ -81,7 +81,7 @@ operation.allitem = async (page, limit) => {
         let conn = connect();
         let coll = conn.useDb('RSEN');
         let itemModel = coll.model("items", sch.itemSchema());
-        console.log(itemModel);
+        // console.log(itemModel);
         let itemData = await itemModel.find({ deleted: false }, { deleted: 0, __v: 0 }, { skip: skipElements, limit: limitTo });
         // console.log(itemData);
         conn.close();
@@ -98,7 +98,7 @@ operation.allitem = async (page, limit) => {
     })
 }
 operation.itembyCat = async (page, limit, cat) => {
-    console.log(cat)
+    // console.log(cat)
     return new Promise(async (resolve, reject) => {
         let skipElements = page != undefined ? (page - 1) * limit : 0;
         let limitTo = limit != undefined ? limit : 20;
@@ -154,7 +154,7 @@ operation.importCsvtoStock = async (stock) => {
             
         for(i in existingItem){
             let oldData=await itemModel1.find({ item_code: existingItem[i].item_code}, { deleted: 0, __v: 0 })
-            console.log(oldData);
+            // console.log(oldData);
             let p=(oldData[0].purchase)+(existingItem[i].purchase)
                 let s=(oldData[0].sale)
                 let st=p-s
@@ -162,7 +162,7 @@ operation.importCsvtoStock = async (stock) => {
                 existingItem[i].sale=s
                 existingItem[i].stock=st
         }
-            console.log(newItem);
+            // console.log(newItem);
           
             for(i of existingItem){
                
@@ -246,7 +246,7 @@ operation.createNewItem = async (data, decode) => {
         let coll = conn.useDb('RSEN');
         let itemModel = coll.model("items", sch.itemSchema());
         let previtem=await itemModel.find({ serial_no: data.serial_no }, { deleted: 0, __v: 0 });
-        console.log( previtem.length);
+        // console.log( previtem.length);
         let itemData = {
             category: data.category,
             sub_category: data.sub_category,
@@ -294,11 +294,11 @@ operation.createNewItem = async (data, decode) => {
             let p=previtemData[0].purchase+data.purchase
             let s=previtemData[0].sale
             let st=p-s
-            console.log('---------------');
-            console.log(p);
-            console.log(s);
-            console.log(st);
-            console.log('-----------------');
+            // console.log('---------------');
+            // console.log(p);
+            // console.log(s);
+            // console.log(st);
+            // console.log('-----------------');
            
             let itemData2 = {
                 item_code: data.item_code,
@@ -436,7 +436,7 @@ operation.allstock = async (page, limit) => {
         let conn = connect();
         let coll = conn.useDb('RSEN');
         let itemModel = coll.model("stocks", sch.stockSchema());
-        console.log(itemModel);
+        // console.log(itemModel);
         let itemData = await itemModel.find({}, { deleted: 0, __v: 0 }, { skip: skipElements, limit: limitTo });
         // console.log(itemData);
         conn.close();
@@ -453,7 +453,7 @@ operation.allstock = async (page, limit) => {
     })
 }
 operation.stockbyCat = async (page, limit, cat) => {
-    console.log(cat)
+    // console.log(cat)
     return new Promise(async (resolve, reject) => {
         let skipElements = page != undefined ? (page - 1) * limit : 0;
         let limitTo = limit != undefined ? limit : 20;

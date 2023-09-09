@@ -1,0 +1,4 @@
+Category,Sub_Category,Brand,Code,Model_No,Serial_No,Buy_Rate,Sale_Rate,Status,Size,Purchase,Supplier,Bill_Date
+Monitor,LED,Dell,ML01,dell15l,14966,12000,15000,TRUE,18.5,5,Alive Infotech,10-11-2022
+HDD,SATA,WD,HD01,wd55,5588,800,1200,TRUE,500GB,50,Alive Infotech,10-11-2022
+SSD,NVME,Consistent,SD02,cf448,2188,650,900,TRUE,250GB,50,Alive Infotech,10-11-2022
